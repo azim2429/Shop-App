@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.orange,
         accentColor: Colors.yellowAccent,
-        canvasColor: Colors.grey[100],
+        canvasColor: Colors.red[100],
         textTheme: ThemeData.light().textTheme.copyWith(
             body1: TextStyle(color: Colors.black),
             body2: TextStyle(color: Colors.white),
