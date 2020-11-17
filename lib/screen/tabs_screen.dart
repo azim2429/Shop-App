@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shopapp/screen/categories_screen.dart';
 import 'package:shopapp/screen/favourite.dart';
+import 'package:shopapp/widgets/main_drawer.dart';
 
 class TabScreen extends StatefulWidget {
   @override
@@ -10,9 +11,15 @@ class TabScreen extends StatefulWidget {
 class _TabScreenState extends State<TabScreen> {
 
 
-  final List<Widget> _pages = [
-    CategoriesScreen(),
-    Favourite(),
+  final List<Map<String, Object>> _pages = [
+    {
+      'page': CategoriesScreen(),
+      'title': 'Categories',
+    },
+    {
+      'page': Favourite(),
+      'title': 'Your Favorite',
+    },
   ];
   int _selectedPageIndex = 0;
   void _selectPage(int index){
@@ -20,11 +27,16 @@ class _TabScreenState extends State<TabScreen> {
          _selectedPageIndex = index;
        });
   }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: _pages[_selectedPageIndex],
+      drawer:MainDrawer(),
+      appBar: AppBar(
+        title: Text(_pages[_selectedPageIndex]['title'],style: TextStyle(color: Colors.white),),
+        backgroundColor: Colors.red,
+
+      ),
+      body: _pages[_selectedPageIndex]['page'],
       bottomNavigationBar: BottomNavigationBar(
         selectedItemColor: Colors.yellowAccent,
         unselectedItemColor: Colors.white,

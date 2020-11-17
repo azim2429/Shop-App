@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'file:///D:/Project/budget/shop_app/lib/screen/categories_screen.dart';
+import 'package:shopapp/screen/filters_screen.dart';
 import 'file:///D:/Project/budget/shop_app/lib/screen/category_meals_item.dart';
 import 'package:shopapp/screen/meal_detail_item.dart';
 import 'package:shopapp/screen/tabs_screen.dart';
@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Foodies',
       theme: ThemeData(
-        primarySwatch: Colors.orange,
+        primarySwatch: Colors.red,
         accentColor: Colors.yellowAccent,
         canvasColor: Colors.red[100],
         textTheme: ThemeData.light().textTheme.copyWith(
@@ -33,6 +33,7 @@ class MyApp extends StatelessWidget {
         '/': (ctx) => TabScreen(),
         '/category_meal_item': (ctx) => CategoryMealScreen(),
         MealDetailScreen.routeName: (ctx) => MealDetailScreen(),
+        FilterScreen.routeName:(ctx) => FilterScreen(),
       },
       debugShowCheckedModeBanner: false,
     );
